@@ -7,12 +7,14 @@
 #include "MateriaSource.hpp"
 #include "Character.hpp"
 #include "IMateriaSource.hpp"
-
-int main()
+#include "AMateria.hpp"
+void f()
 {
     IMateriaSource *src = new MateriaSource();
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
+    AMateria *a = new Ice();
+    AMateria *b = new Cure();
+    src->learnMateria(a);
+    src->learnMateria(b);
     ICharacter *me = new Character("me");
     AMateria *tmp;
     tmp = src->createMateria("ice");
@@ -22,11 +24,20 @@ int main()
     ICharacter *bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
+    me->unequip(0);
     delete bob;
     delete me;
     delete src;
+    delete a;
+    delete b;
+
+}
+
+int main()
+{
+    f();
      system("leaks interfaces");
-    return 0;
+    return (0);
 }
 
 // int main()

@@ -8,7 +8,7 @@ CC = c++
 
 RM = rm -f
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror -std=c++98 
 
 all : $(NAME)
 
