@@ -34,6 +34,7 @@ void RobotomyRequestForm::special() const
 {
     srand(time(NULL));
     int randomized = rand() % 2;
+    std::cout << "zzzzzzzzzzzzzzzzzzz" << std::endl;
     if(randomized == 0)
         std::cout << target + " : the robotomy failed." << std::endl;
     else
