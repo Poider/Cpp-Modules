@@ -25,3 +25,8 @@ Contact& PhoneBook::Search(int index)const
 {
     return contact[index % 8];
 }
+
+int PhoneBook::getCount()const
+{
+    return count;
+}

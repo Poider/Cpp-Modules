@@ -3,6 +3,7 @@
 #include <ios>
 #include <cmath>
 #include <iomanip>
+#include <set>
 int main(int argc, char* argv[], char* envp[])
 {
     // using namespace std;
@@ -11,7 +12,10 @@ int main(int argc, char* argv[], char* envp[])
     // cout.setf(ios::fixed);
     // float b = NAN;
     // cout << setprecision(2) << b;
-    int *a = new int[0];
+    // int *a = new int[0];
+    std::multiset<int> set;
 
-
+    set.insert(12);
+    set.insert(13);
+    std::cout << std::distance( set.find(13),set.begin()) << std::endl;
 }

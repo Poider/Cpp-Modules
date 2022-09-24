@@ -83,3 +83,22 @@ void Span::addNumber(int number)
     elementsNumber++;
     _set.insert(number);
 }
+
+void Span::add_multiple(int arr[], int arrElements)
+{
+    if(arrElements + elementsNumber > N)
+        throw Span::MaxNumbersReached();
+    elementsNumber = elementsNumber + arrElements;
+    _set.insert(arr,arr + arrElements);
+}
+
+void Span::print() const
+{
+    std::multiset<int>::iterator it = _set.begin();
+    std::multiset<int>::iterator end = _set.end();
+
+    for(;it!= end;it++)
+    {
+        std::cout << *it << std::endl;
+    }
+}

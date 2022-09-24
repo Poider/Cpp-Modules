@@ -5,7 +5,10 @@
 
 int fix_line(std::string& line, const std::string& s1, const std::string& s2)
 {
+    if(s1.empty())
+        return 0;
     size_t position = line.find(s1);
+    std::cout << position << std::endl;
     if (position == std::string::npos)
         return 0;
     line.erase(position, s1.size());
@@ -29,7 +32,7 @@ int main(int argc, char **argv)
     //read line by line into a string, find s1 in there, replace it somehow with s2
     //files init
     std :: ifstream infile(filename.c_str());
-    std :: ofstream outfile(outfilename.c_str(),std::ios::app);
+    std :: ofstream outfile(outfilename.c_str(),std::ios::out);
    
     if(infile.is_open() && outfile.is_open())
     {

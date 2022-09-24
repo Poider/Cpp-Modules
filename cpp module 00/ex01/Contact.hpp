@@ -3,8 +3,9 @@ class Contact
 {
     std::string first_name, last_name, nickname, dark_secret;
     double phone_number;
+    
     public:
-
+    int empty;
     Contact();
     void addContact();
     void display_index_info(int index);// with the iopmanips also do the truncating if +10

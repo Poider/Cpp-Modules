@@ -17,8 +17,6 @@ class Span{
     Span& operator=(const Span& other);
     ~Span();
 
-    struct Iterator { /* ... */ };
-
     class MaxNumbersReached : public std::exception {
         public:
         const char *what() const _NOEXCEPT;
@@ -31,7 +29,8 @@ class Span{
     void addNumber(int number);
     int shortestSpan();
     int longestSpan();
-    
+    void add_multiple(int arr[], int arrElements);
+    void print() const;
 };
 
 #endif

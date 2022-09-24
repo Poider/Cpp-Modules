@@ -3,9 +3,9 @@
 DiamondTrap::DiamondTrap()
 {
     name = std::string("Random DiamondTrap");
-    hp = FragTrap::hp;
-    mana = ScavTrap::hp;
-    ad = FragTrap::ad;
+    hp = 100;
+    mana = 50;
+    ad = 30;
     std::cout << "Diamond: default constructor called" << std::endl;
 }
 
@@ -14,10 +14,9 @@ DiamondTrap::DiamondTrap(const std::string& name)
     std::cout << "Diamond: param constructor called" << std::endl;
     this->name = name;
     ClapTrap::name = name + std::string("_clap_name");
-    hp = FragTrap::hp;
-    mana = ScavTrap::hp;
-    ad = FragTrap::ad;
-    std::cout << ScavTrap::ad << "_____"<<std::endl;
+    hp = 100;
+    mana = 50;
+    ad = 30;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
@@ -46,8 +45,6 @@ DiamondTrap::~DiamondTrap()
 void DiamondTrap::attack(const std::string& target)
 {
     ScavTrap::attack(target);
-    ClapTrap::attack(target);
-    FragTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI()

@@ -3,7 +3,7 @@
 
 Contact::Contact()
 {
-   //empty constructor
+   empty = 0;
 }
 
 
@@ -22,7 +22,9 @@ void Contact::addContact()
     getline(std::cin, this->dark_secret);
     std::cout << "phone number"<<std::endl;
     getline(std::cin, number);
-
+    
+    if(number.empty() || first_name.empty() || last_name.empty() || nickname.empty() || dark_secret.empty())
+        empty = 1;
     try{
     this->phone_number = std::stod(number);
     }

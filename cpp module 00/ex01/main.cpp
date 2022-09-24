@@ -10,8 +10,13 @@ void add_to_phonebook(PhoneBook& phonebook)
 {
     Contact contact;
     contact.addContact();
-    phonebook.Add(contact);
-    std::cout << "Contact added to phonebook" << std::endl;
+    if(!contact.empty)
+    {
+        phonebook.Add(contact);
+        std::cout << "Contact added to phonebook" << std::endl;
+    }
+    else
+        std::cout << ">>>>>>Contact had an empty slot" << std::endl;
 }
 
 void search_phonebook(const PhoneBook& phonebook)
@@ -24,6 +29,8 @@ void search_phonebook(const PhoneBook& phonebook)
     getline(std::cin, index_string);
     try{
     index = std::stoi(index_string);
+    if(index >= phonebook.getCount())
+        throw std::invalid_argument("Index out of range");
     }
     catch(std::exception& e){
         std::cout<< "index wrong" << std::endl;

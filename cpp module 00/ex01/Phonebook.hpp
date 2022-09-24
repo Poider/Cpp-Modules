@@ -10,6 +10,7 @@ class PhoneBook
     void Add(const Contact& contact);
     Contact& Search(int index)const;
     void display()const;
+    int getCount()const;
     //displays the contact : index/first name/ last name/ nickname
     //each column displayed is 10 chars, right aligned text, if more than 10 chars > truncate and replace last char with .
     //show one field per line
