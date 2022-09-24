@@ -10,7 +10,7 @@ int main()
     Bureaucrat garen("Garen",1);
     Intern someRandomIntern;
     Form* inting;
-    inting = someRandomIntern.makeForm("robotofmy request", "Bender");
+    inting = someRandomIntern.makeForm("robotomy request", "Bender");
     if(inting)
     {
         try
