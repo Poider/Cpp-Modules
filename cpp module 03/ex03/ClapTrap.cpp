@@ -43,15 +43,28 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
+    if(mana)
+    {
+    mana -= 1;
     std::cout << "ClapTrap " << name <<  " attacks " << target<< " causing "<< ad << " points of damage!" << std::endl;
+    }
+    else std::cout << "No mana" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+    hp -= amount;
     std::cout << "ClapTrap " << name <<  "takes " <<  amount << " points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+    if(mana)
+    {
+    mana -= 1;
+    hp += amount;
     std::cout << "ClapTrap " << name <<  "repairs " << amount << "of Hp" << std::endl;
+    }
+    else std::cout << "No mana" << std::endl;
 }
+

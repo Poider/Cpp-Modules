@@ -48,5 +48,8 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(const std::string& target)
 {
-    std::cout << "ScavTrap " << name <<  " attacks " << target<< " causing "<< ad << " points of damage!" << std::endl;
+    if(mana)
+        std::cout << "ScavTrap " << name <<  " attacks " << target<< " causing "<< ad << " points of damage!" << std::endl;
+    else
+        std::cout << "No mana" << std::endl;
 }

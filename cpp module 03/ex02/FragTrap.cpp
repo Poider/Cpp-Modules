@@ -48,5 +48,8 @@ void FragTrap::highFiveguys()
 
 void FragTrap::attack(const std::string& target)
 {
-    std::cout << "FragTrap " << name <<  " attacks " << target<< " causing "<< ad << " points of damage!" << std::endl;
+    if(mana)
+        std::cout << "FragTrap " << name <<  " attacks " << target<< " causing "<< ad << " points of damage!" << std::endl;
+    else
+        std::cout << "No mana" << std::endl;
 }
