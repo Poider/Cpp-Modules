@@ -18,6 +18,7 @@ Dog::Dog(const Dog& other)
 Dog& Dog::operator=(const Dog& other)
 {
     std::cout << "Dog : = operator called" << std::endl;
+    delete brain;
     *brain = *(other.brain);
     type = other.type;
     return *this;
