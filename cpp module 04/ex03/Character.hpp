@@ -14,7 +14,7 @@ class Character : public ICharacter{
     AMateria *inventory[4];
     std::string name;
     int equipped;
-    AMateria *uniquepped[100];
+    AMateria *uniquepped[1000];
 
     public:
     

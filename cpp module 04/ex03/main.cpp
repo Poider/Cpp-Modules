@@ -11,8 +11,10 @@
 void f()
 {
     IMateriaSource *src = new MateriaSource();
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
+    AMateria *a = new Ice();
+    AMateria *b = new Cure();
+    src->learnMateria(a);
+    src->learnMateria(b);
     ICharacter *me = new Character("me");
     AMateria *tmp;
     tmp = src->createMateria("ice");

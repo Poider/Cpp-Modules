@@ -95,11 +95,18 @@ void Character::equip(AMateria* m)
 void Character::unequip(int idx)
 {
     int i = 0;
+    int flag = 0 ;
     while(uniquepped[i])
         i++;
     if(inventory[idx])
     {
-        uniquepped[i] = inventory[idx];
+        for(int j = 0; j < 1000; j++)
+        {
+            if(inventory[idx] ==  uniquepped[j])
+                flag = 1;
+        }
+        if(flag == 0)
+            uniquepped[i] = inventory[idx];
         inventory[idx] = 0;
         equipped--;
     }

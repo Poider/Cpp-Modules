@@ -18,6 +18,7 @@ Cat::Cat(const Cat& other)
 Cat& Cat::operator=(const Cat& other)
 {
     std::cout << "Cat : = operator called" << std::endl;
+    delete brain;
     *brain = *(other.brain);
     type = other.type;
     return *this;
